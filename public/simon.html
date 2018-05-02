@@ -8,6 +8,9 @@
     <!--Favicon -->
      <link href="../assets/favicon.ico" rel="icon" type="image/png" >
 
+     <!-- Fontawesome  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
      <!-- Google Fonts -->
      <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
 
@@ -21,10 +24,10 @@
       #fontK{font-family: 'Kalam', cursive;}
 
       #output{
-            width:400px;
-            height:400px;
+            width:500px;
+            height:500px;
             display:block;
-            border:1px solid black;
+            border:1px solid #052F5F;
         }
         #cButtons > div {
             width: 98px;
@@ -37,7 +40,7 @@
            width:98px;
             height:100px;
             display:block;
-            border:1px solid black;
+            border:1px solid #052F5F;
             display:inline-block;
         }
     </style>
@@ -49,7 +52,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <a href="#" class="navbar-brand"><img src="../assets/cube-one-color-48-189122.png" alt=""></a>
+      <a href="index.html" class="navbar-brand"><img src="../assets/cube-one-color-48-189122.png" alt=""></a>
       <div class="collapse navbar-collapse" id="myNav">
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
@@ -124,11 +127,19 @@
 <hr class="my-5">
 
   <div class="container collapse" id="simon">
-    <input type="button" class="btn btn-warning" value="Start" onclick="start()">
-        <div id="output"></div>
-        <div id="message"></div>
+    <div class="row">
+      <div class="col-md-6 mx-auto text-center">
+        <input type="button" class="btn btn-warning btn-block mb-2 text-primary" value="Start" onclick="start()">
+        <div id="output" class="img-fluid"></div>
+      </div>
+      <div class="col-md-6 mx-auto text-center">
+        <div id="message" class="display-3 mt-3" style="color:#052F5F"></div>
+        <div id="message1" class="mt-3" style="color:#052F5F"></div>
         <div id="cButtons"> </div>
         <div id="guess"></div>
+      </div>
+
+    </div>
   </div>
 
   <div class="container-fluid">
@@ -172,11 +183,12 @@
    var loop = 0;
    var output = document.getElementById('output');
    var message = document.getElementById('message');
+   var message1 = document.getElementById('message1');
    var guess = document.getElementById('guess');
    var gameplay = false;
 
    function start() {
-           var colorArr = ["red", "green", "blue", "yellow"];
+           var colorArr = ["Red", "Green", "Blue", "Yellow"];
            var html = "";
            arr1=[];
            arr2=[];
@@ -213,19 +225,20 @@
            }
            guess.appendChild(d);
            arr2.push(g);
+
            if (arr2.length == arr1.length) {
                gameplay = false;
                if (arr1.toString() == arr2.toString()) {
-                   message.innerText = "You were correct! :) Press START to play again.";
+                   message1.innerText = 'You were correct! Press START to play again.';
                }else{
-                   message.innerHTML = "You were wrong. <br> Your guess " + arr2 + ".<br>The correct order was: " + arr1;
+                   message1.innerHTML = "You were wrong. <br> Your guess " + arr2 + ".<br>The correct order was: " + arr1;
                }
            }
        }
        }
 
        function goWhite() {
-           output.style.backgroundColor = "white";
+           output.style.backgroundColor = "#EDE8CE";
            myT = setTimeout(goColor, 250);
        }
 
