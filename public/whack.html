@@ -19,6 +19,47 @@
       body{background-color: #EDE8CE;}
 
       #fontK{font-family: 'Kalam', cursive;}
+
+      .gameboard {
+            width: 600px;
+            height: 800px;
+            margin: 0 auto;
+            /* border: 1px solid #ddd; */
+            text-align: center;
+        }
+
+        .office {
+            float: left;
+            width: 120px;
+            height: 170px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #ddd;
+            margin: 10px 30px;
+        }
+
+        .desk {
+            width: 100%;
+            height: 50px;
+            bottom: 0px;
+            position: absolute;
+            background-color: burlywood;
+            z-index: 2;
+        }
+
+        .computer {
+            background: url('../assets/Screen Shot 2018-04-06 at 4.22.28 PM.png') bottom center no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            height: 80%;
+            transition: all 0.5s;
+        }
+
+        .popup {
+            top: 0;
+        }
     </style>
   </head>
   <body>
@@ -101,8 +142,27 @@
       </div>
   </div>
 <hr class="my-5">
+
   <div class="container collapse" id="whack">
-    <h1>test test test</h1>
+    <div class="row">
+      <div class="col-lg-2 jumbotron mx-auto text-center" style="background-color:#A2C0CD">
+              <ul class="list-group" style="background-color:#EDE8CE">
+                <li class="list-group-item">Score:<span class="score">0</span></li>
+                <li class="list-group-item">Timer:<span id="timer">15</span></li>
+                <!-- <li class="list-group-item">Third</li>
+                <li class="list-group-item">Fourth</li>
+                <li class="list-group-item">Fifth</li> -->
+              </ul><br>
+              <input type="button" class="btn btn-warning text-primary mx-auto mb-2" onclick="start()" value="Start Game">
+              <br>
+              <div id="message"></div>
+      </div>
+
+      <div class="col-lg-10">
+            <div class="gameboard mx-auto text-center pl-3"></div>
+      </div>
+
+    </div>
 
   </div>
 
@@ -141,6 +201,82 @@
         $('[data-toggle="tooltip"]').tooltip()
         $('[data-toggle="popover"]').popover()
       })
+
+      window.onload = build;
+        var computer;
+        var offices = 9;
+        var timer;
+        var sCom;
+        var score = 0;
+        var cOff = true;
+        var stopWatch = 15;
+        var message = document.getElementById('message');
+
+        function build() {
+            var html = "<h1>Hit the computer</h1>";
+            for (var x = 0; x < offices; x++) {
+                html += '<div class="office"><div class="desk"></div><div class="computer"></div></div>';
+            }
+            document.querySelector('.gameboard').innerHTML = html;
+            computer = document.querySelectorAll('.computer');
+            for (var x = 0; x < computer.length; x++) {
+                computer[x].addEventListener('click', hitcomputer, false);
+            }
+        }
+
+        function popup() {
+            cOff = true;
+            sCom = computer[Math.floor(Math.random() * computer.length)];
+            sCom.classList.add('popup');
+            var rTime = (Math.floor(Math.random() * 10) * 100) + 2000;
+            timer = setTimeout(hidecomputer, rTime);
+        }
+
+        function hidecomputer() {
+            sCom.classList.remove('popup');
+            popup();
+        }
+
+        function startClock(){
+            rndTimer = window.setTimeout( "countDown()", 1000);
+            window.status = rndTimer;
+        }
+
+        function countDown(){
+          stopWatch = stopWatch - 1;
+          document.querySelector('#timer').innerHTML = stopWatch;
+          if (stopWatch == 0) {
+            window.clearTimeout( rndTimer );
+            rndTimer = null;
+            var gameboard = document.querySelector('.gameboard');
+            gameboard.style.display = "none";
+            message.innerHTML = "GAME Over! You whacked "+score+" computers in 15 seconds! If you want to try to beat that record press start to play again."
+            stopWatch = 16;
+            score = 0;
+          } else {
+            rndTimer = window.setTimeout( "countDown()",1000);
+          }
+        }
+
+        function hitcomputer() {
+            event.target.classList.remove('popup');
+            if (cOff) {
+                cOff = false;
+                score++;
+                document.querySelector('.score').innerHTML = score;
+            }
+            popup();
+        }
+
+        function start() {
+          score = 0;
+          document.querySelector('.score').innerHTML = score;
+          var gameboard = document.querySelector('.gameboard');
+          gameboard.style.display = "block";
+            build();
+            popup();
+            startClock();
+        }
     </script>
     </body>
   </html>
