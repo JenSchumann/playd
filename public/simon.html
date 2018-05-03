@@ -24,7 +24,7 @@
       #fontK{font-family: 'Kalam', cursive;}
 
       #output{
-            width:500px;
+            width:550px;
             height:500px;
             display:block;
             border:1px solid #052F5F;
@@ -32,7 +32,7 @@
         #cButtons > div {
             width: 98px;
             display: inline-block;
-            height: 50px;
+            height: 100px;
             text-align: center;
             border: 1px solid black;
         }
@@ -129,12 +129,12 @@
   <div class="container collapse" id="simon">
     <div class="row">
       <div class="col-md-6 mx-auto text-center">
-        <input type="button" class="btn btn-warning btn-block mb-2 text-primary" value="Start" onclick="start()">
+        <input type="button" class="btn btn-warning btn-block mb-2 text-primary" value="Start" onclick="start()" data-toggle="tooltip" data-placement="top" title="The color sequence will be displayed in the box below & you can press the color boxes to the right to mimic the sequence.">
         <div id="output" class="img-fluid"></div>
       </div>
       <div class="col-md-6 mx-auto text-center">
-        <div id="message" class="display-3 mt-3" style="color:#052F5F"></div>
-        <div id="message1" class="mt-3" style="color:#052F5F"></div>
+        <div id="message" class="display-3 mt-3"></div>
+        <div id="message1" class="mt-3 mb-3" style="color:#052F5F"></div>
         <div id="cButtons"> </div>
         <div id="guess"></div>
       </div>
@@ -194,7 +194,8 @@
            arr2=[];
            guess.innerHTML="";
            gameplay = true;
-           message.innerHTML = "GAME Started";
+           message.innerHTML = '<span class="badge badge-pill badge-primary">GAME Started</span>';
+
            for (var x = 0; x < colorArr.length; x++) {
                html += '<div class="' + colorArr[x] + '" style="background-color:' + colorArr[x] + '" onclick="oGuess()">' + colorArr[x] + '</div>';
            }
