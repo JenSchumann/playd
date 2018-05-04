@@ -11,6 +11,9 @@
      <!-- Google Fonts -->
      <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
 
+     <!-- Fontawesome  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
 
@@ -171,11 +174,6 @@
 
   </div>
 
-
-  <div class="container-fluid">
-      © 2018 Copyright
-    </div>
-
     <div id="myMod" class="modal fade">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -193,7 +191,19 @@
           </div>
     </div>
 
-
+    <!-- Footer -->
+    <footer class="container-fluid text-light mt-3 fixed-bottom" style="background-color:#052F5F">
+              <!-- footer content -->
+              <p class="text-center" style="color:#5B9279">&copy; 2018 Playd</p>
+              <div class="text-center">
+                <ul class="list-inline">
+                    <li class="list-inline-item text-primary"><a href="" target="_blank"><i class="fab fa-youtube-square fa-2x"></i></a></li>
+                    <li class="list-inline-item"><a href="" target="_blank" style="color:#EDE8CE"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+                    <li class="list-inline-item text-danger"><a href="" target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a></li>
+                    <li class="list-inline-item"><a href="" target="_blank" style="color:#EDE8CE"><i class="fab fa-pinterest-square fa-2x"></i></a></li>
+                </ul>
+              </div>
+            </footer>
 
     <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -218,7 +228,7 @@
         var message = document.getElementById('message');
 
         function build() {
-            var html = '<h1 id="h1W"><span class="badge badge-warning text-primary">Whack the PCs!!!</span></h1>';
+            var html = '<h1 id="h1W"><span class="badge badge-warning pt-3 pb-3">Whack the PCs!!!</span></h1>';
             for (var x = 0; x < offices; x++) {
                 html += '<div class="container"><div class="office"><div class="desk"></div><div class="computer"></div></div></div>';
             }
