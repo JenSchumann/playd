@@ -16,5 +16,6 @@ Font Awesome: https://fontawesome.com/v4.7.0/icons/
 Free Favicon: https://fontawesome.com/v4.7.0/icons/
 PEXELS: https://www.pexels.com/
 
+Needs to have Package.json
 Heroku:
 https://playdd.herokuapp.com/ | https://git.heroku.com/playdd.git

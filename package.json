@@ -1,0 +1,22 @@
+{
+  "name": "playd",
+  "version": "1.0.0",
+  "description": "Web Site Design:",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JenSchumann/playd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JenSchumann/playd/issues"
+  },
+  "homepage": "https://github.com/JenSchumann/playd#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
