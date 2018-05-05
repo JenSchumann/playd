@@ -1,6 +1,19 @@
 var express = require('express');
 var app = express();
 
-app.listen(3000, function(){
-    console.log('listening...');
+
+
+
+
+
+
+const port = process.env.PORT || 3000;
+
+
+
+app.listen(port, ()=>{
+  console.log('playdd is listening');
+  console.log('---------------------------------');
+  console.log('Server running on port: ' + port);
+  console.log('---------------------------------');
 });
