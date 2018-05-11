@@ -17,16 +17,43 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
 
-    <title>Hi || Lo</title>
+    <title>Hi OR Low?</title>
     <style media="screen">
       body{background-color: #EDE8CE;}
 
       #fontK{font-family: 'Kalam', cursive;}
 
+      #highLow{display: none;}
+
+      /* #hiloInfo{
+        background-color: rgba(118, 5, 5, 0.74)
+      } */
+
+      span.icard{
+          height: 125px;
+          width: 100px;
+          padding: 1.75em .60em;
+          padding-bottom: 2.85em;
+          border: 5px solid rgba(95, 20, 20, 0.45);
+          margin: 0 auto;
+          text-align: center;
+          font-size: 35px;
+          background-color: white;
+          border-radius: .25em;
+          z-index: 2;
+          border-style: outset;
+          display: inline-block;
+        }
+
+        #cards{
+          height: 600x;
+          flex-wrap: wrap;
+          padding-left: 6%;
+        }
+
     </style>
   </head>
   <body>
-    <!-- Navbar -->
     <!-- Navbar -->
     <nav class="navbar fixed-top navbar-dark navbar-expand-sm" style="background-color:#052F5F">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav">
@@ -106,10 +133,30 @@
       </div>
   </div>
 <hr class="my-5">
-<div class="container collapse" id="hilo">
+<div class="container collapse pb-5" id="hilo">
 
-      <h1>test test test test test test test</h1>
+  <div class="row">
+      <div class="col-lg-5 jumbotron bg-danger" id="hiloInfo">
 
+            <h1 class="h1" data-toggle="tooltip" data-placement="bottom" title="Are you feeling lucky?? If you are, even though this game is not yet responsive for smaller screens, you can use some of that lucky energy by playing a game, & seeing how many times it takes you to win!"><span class="badge badge-warning text-primary">High vs Low</span></h1><br>
+            <div id="messageHL" class="text-center text-light display-5"><span class="badge badge-pill" style="background-color:#052F5F"><strong>Rules:</strong></span> Select either Hi or Low for the next card.  Guess the value of the down facing card versus the up facing card.  You start with 3 lives.  Guess incorrectly 3 times and it's game over.  Score 5 points & you win!  How high can you go?</div>
+            <br>
+
+            <div id="start">
+              <button id="btnstart" type="button" class="btn btn-warning text-primary mx-auto mb-2">Start Game</button>
+            </div>
+      </div>
+
+            <div id="score"></div>
+
+    <div class="col-lg-7">
+        <div id="highLow" class="pt-3 pb-3 mx-auto btn-block">
+          <button id="btnhigh" type="button"  class="btn btn-outline-danger btn-lg btn-block">High</button><br>
+          <button id="btnlow" type="button"  class="btn btn-outline-danger btn-lg btn-block">Low</button>
+        </div>
+
+
+    <div id="cards" class="pb-3 mx-auto"></div>
 </div>
 
     <div id="myMod" class="modal fade">
@@ -166,12 +213,144 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
       <script>
+      $(() => {
+
       $(function() {
         $('[data-toggle="tooltip"]').tooltip()
         $('[data-toggle="popover"]').popover()
       })
+      //==========================================================================
+      // variables:
+      let cardOutput = document.getElementById('cards');
+      let count = 0;
+      let score = 0;
+      let lives = 3;
+      let cards = [];
+      const suits = ['spades', 'hearts', 'clubs', 'diams'];
+      const numbers = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
+      const $message = $('#messageHL');
+      let scoreOutput = document.getElementById('score');
 
+      const gameStart = () => {
+        const messageChange = $('#start').on('click', (e) => {
+          // console.log('start button clicked');
+          $("#messageHL").text("Game Started!");
+          $(e.currentTarget).css('display', 'none');
+          $('#highLow').css('display','inline-flex');
+          })
+          buildCards();
+          shuffleArray(cards);
+          cardOutput.innerHTML +=showCard();
+        }
 
+      let hilo = (a) => {
+            //calculate winner
+            let win = false;
+            let oldCard = cards[count].cardValue;
+            count++;
+            cardOutput.innerHTML += showCard();
+            $(cardOutput).html += showCard();
+                  let newCard = cards[count].cardValue;
+                  if(a === 'high' && oldCard < newCard) {
+                    win = true;
+                  } else if (a === 'low' && oldCard > newCard) {
+                    win = true;
+                  }
+                        if(win) {
+                            score++;
+                            if(score == 5){
+                              let cards = [];
+                              winState();
+                            } else if (win && score < 5){
+                            $("#messageHL").text("You were correct! Score: " + score + " LIVES remaining:  "+lives);
+                          }
+                          } else {
+                              score--;
+                              lives--;
+                            $("#messageHL").text("You were wrong! Your score is now " + score + ".  LIVES remaining: " +lives);
+
+                                  if(lives == 0) {
+                                    let cards = [];
+                                    endPlay(score);
+                                  }
+                            }
+      }
+
+      const endPlay = (s) => {
+          document.getElementById('highLow').style.display='none';
+          document.getElementById('score');
+          $('#messageHL').text("Game over!  Your score was " + s);
+          $('#start').css('display','block');
+          let count = 0;
+          let score = 0;
+          let lives = 3;
+          let cards = [" "];
+          gameStart();
+      }
+
+      const winState = () => {
+
+        document.getElementById('highLow').style.display='none';
+        document.getElementById('score');
+        $("#messageHL").text("Congratulations!  You've reached 5 points!  You're a High-Roller now! Press Start Game to play again!");
+        $('#start').css('display','block');
+        cardOutput.innerHTML = "";
+        let count = 0;
+        let score = 0;
+        let lives = 3;
+        let cards = [];
+
+        gameStart();
+      }
+
+      const shuffleArray = (array) => {
+          for(let i = array.length -1; i>0; i--){
+            const holder = Math.floor(Math.random()* (i + 1));
+            const temp = array[i];
+            array[i] = array[holder];
+            array[holder] = temp;
+          }
+          return array;
+      }
+
+      let showCard = () => {
+        let c = cards[count];
+        let bgColor = (c.icon == "H" || c.icon == "D")?'red':'black';
+          return '<span class="icard" style="color:'+bgColor+'">'+cards[count].num+'&'+ cards[count].suit+';</span>';
+      }
+
+      const buildCards = () => {
+        cards = [];
+        for(s in suits){
+          const suit = suits[s][0].toUpperCase();
+          for(n in numbers){
+              const card = {
+               suit: suits[s],
+               num: numbers[n],
+               cardValue: parseInt(n) + 2,
+               icon: suit
+            }
+            cards.push(card)
+          }
+        }
+        // console.log(cards);
+      }
+
+      // event listeners:
+    $('#btnstart').on('click', (e) => {
+      $("#cards").empty();
+      gameStart();
+    })
+
+    $('#btnhigh').on('click', (e) => {
+      hilo('high');
+    })
+
+    $('#btnlow').on('click', (e) => {
+      hilo('low');
+    })
+
+});
     </script>
     </body>
   </html>
