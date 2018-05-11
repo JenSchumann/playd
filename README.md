@@ -18,3 +18,8 @@ PEXELS: https://www.pexels.com/
 
 Heroku:
 https://playdd.herokuapp.com/
+
+
+
+Task List:
+- [] add links to the Github repo & Heroku site for projects on the "In Progress" page
