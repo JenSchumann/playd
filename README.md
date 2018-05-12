@@ -27,3 +27,6 @@ Task List:
 - [ ] footer links
 - [ ] Kingly content in all modals
 - [ ] update readme
+- [ ] add list-group-item-action class to accordion buttons on about page
+- [ ] photoshop edit pics below "our story" on about page to be the same size
+- [ ] set footer to collapsed state when page loads
