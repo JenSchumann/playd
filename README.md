@@ -30,3 +30,18 @@ Task List:
 - [ ] add list-group-item-action class to accordion buttons on about page
 - [ ] photoshop edit pics below "our story" on about page to be the same size
 - [ ] set footer to collapsed state when page loads
+- [ ] add a badge pill to the congrats message for HiLo winners
+- [ ] incorporate BGG API for content in about page: https://boardgamegeek.com/wiki/page/BGG_XML_API
+
+BGG API Notes:
+ BGG API Info: https://boardgamegeek.com/wiki/page/BGG_XML_API
+ to get an exact result:
+ http://www.boardgamegeek.com/xmlapi/search?search=Crossbows%20and%20Catapults&exact=1
+ to get list of results w/search terms:
+ http://www.boardgamegeek.com/xmlapi/search?search=The%20Resistance
+/xmlapi/collection/<username>
+
+could tie my BGG user info on about page:
+http://www.boardgamegeek.com/xmlapi/collection/JenSchumann
+
+http://www.boardgamegeek.com/xmlapi/boardgame/165056
