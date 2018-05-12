@@ -22,4 +22,8 @@ https://playdd.herokuapp.com/
 
 
 Task List:
-- [] add links to the Github repo & Heroku site for projects on the "In Progress" page
+- [ ] add links to the Github repo & Heroku site for projects on the "In Progress" page
+- [ ] typography updates
+- [ ] footer links
+- [ ] Kingly content in all modals
+- [ ] update readme
