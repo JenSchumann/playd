@@ -39,6 +39,7 @@ BGG API Notes:
  http://www.boardgamegeek.com/xmlapi/search?search=Crossbows%20and%20Catapults&exact=1
  to get list of results w/search terms:
  http://www.boardgamegeek.com/xmlapi/search?search=The%20Resistance
+ <!-- 214319 -->
 /xmlapi/collection/<username>
 
 could tie my BGG user info on about page:
