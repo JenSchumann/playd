@@ -9,7 +9,7 @@
      <link href="assets/favicon.ico" rel="icon" type="image/png" >
 
      <!-- Google Fonts -->
-     <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Kalam|Shadows+Into+Light" rel="stylesheet">
 
      <!-- Fontawesome  -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
@@ -22,6 +22,17 @@
       body{background-color: #EDE8CE;}
 
       #fontK{font-family: 'Kalam', cursive;}
+
+      #headingOne,#headingTwo,#headingThree,#headingFour,#headingFive{
+        font-family: 'Kalam', cursive;
+
+
+        text-shadow: 6px 6px 0px rgba(0.7,0.7,0.7,0.7);
+
+        /* text-shadow: 0px 4px 3px rgba(0,0,0,0.6),
+             0px 8px 13px rgba(0,0,0,0.4),
+             0px 18px 23px rgba(0,0,0,0.4); */
+      }
     </style>
   </head>
   <body>
@@ -92,7 +103,7 @@
   <div class="container">
       <div class="jumbotron shadow-lg" style="background-color:#A2C0CD">
         <!-- text-primary -->
-        <div class="h1"><span class="badge badge-warning text-primary">How I Came to this Fork in the Road</span></div>
+        <div class="h1 d-inline-block text-truncate" style="max-width: 383px;"><span class="badge badge-warning text-primary">How I Came to this Fork in the Road</span></div>
         <hr class="my-5">
         <!-- rounded badge: -->
             <p class="lead"><span class="badge badge-pill" style="background-color:#052F5F">The path</span> to becoming a full stack developer was an unexpected journey.</p>
@@ -100,25 +111,27 @@
         <hr class="my-1">
 
 
-            <button type="button" class="btn btn-warning text-primary">Learn More</button>
+            <button type="button" class="btn btn-warning text-primary" data-toggle="collapse" href="#aboutMe">Learn More</button>
       </div>
+    </div>
+<hr class="my-5">
 
-      <div class="container">
+      <div class="container collapse" id="aboutMe">
           <div class="row">
 
-            <div class="accordian col-md-5">
+            <div id="accordion" class="col-md-5">
               <h5>Some background on how my love for game-based learning led me here:</h5>
 
               <div class="card">
                   <div class="card-header bg-primary" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#set" aria-expanded="true" aria-controls="set">
-                        <span style="color:#EDE8CE">Set</span>
+                    <h5 class="mb-0 text-center">
+                      <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#set" aria-expanded="false" aria-controls="set">
+                        <span class="text-center font-weight-bold" style="font-size:2em; color:#EDE8CE">Set</span>
                       </button>
                     </h5>
                   </div>
 
-                  <div id="set" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div id="set" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
                     </div>
@@ -127,14 +140,14 @@
 
               <div class="card">
                   <div class="card-header bg-warning" id="headingTwo">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link collapse" data-toggle="collapse" data-target="#nails" aria-expanded="false" aria-controls="nails">
-                        <span style="color:#EDE8CE">Nails</span>
+                    <h5 class="mb-0 text-center">
+                      <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#nails" aria-expanded="false" aria-controls="nails">
+                        <span class="text-center font-weight-bold" style="font-size:2em;color:#EDE8CE">A Bed of Nails</span>
                       </button>
                     </h5>
                   </div>
 
-                  <div id="nails" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div id="nails" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                     <div class="card-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                     </div>
@@ -143,14 +156,14 @@
 
               <div class="card">
                   <div class="card-header bg-info" id="headingThree">
-                    <h5 class="mb-0">
+                    <h5 class="mb-0 text-center">
                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#schol" aria-expanded="false" aria-controls="schol">
-                        <span style="color:#EDE8CE">Scholastica</span>
+                        <span style="font-size:2em; color:#EDE8CE">Scholastica</span>
                       </button>
                     </h5>
                   </div>
 
-                  <div id="schol" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div id="schol" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
                     </div>
@@ -159,14 +172,14 @@
 
               <div class="card">
                   <div class="card-header bg-danger" id="headingFour">
-                    <h5 class="mb-0">
+                    <h5 class="mb-0 text-center" style="color:#052F5F">
                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#news" aria-expanded="false" aria-controls="news">
-                        <span style="color:#EDE8CE">Advocacy</span>
+                        <span style="font-size:2em;color:#EDE8CE">Advocacy</span>
                       </button>
                     </h5>
                   </div>
 
-                  <div id="news" class="collapse show" aria-labelledby="headingFour" data-parent="#accordion">
+                  <div id="news" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
                     <div class="card-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. .
                     </div>
@@ -175,14 +188,14 @@
 
               <div class="card">
                   <div class="card-header bg-success" id="headingFive">
-                    <h5 class="mb-0">
+                    <h5 class="mb-0 text-center" style="color:#052F5F">
                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#trad" aria-expanded="false" aria-controls="trad">
-                        <span style="color:#EDE8CE">Tradition</span>
+                        <span style="font-size:2em;color:#EDE8CE">Tradition</span>
                       </button>
                     </h5>
                   </div>
 
-                  <div id="trad" class="collapse show" aria-labelledby="headingFive" data-parent="#accordion">
+                  <div id="trad" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
                     <div class="card-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. .
                     </div>
@@ -206,14 +219,14 @@
           </div>
 <!-- mb-3 = margin-bottom (can do mt ml mr) -->
           <div class="row mb-5">
-            <div class="col-md-3"><img src="assets/block.JPG" class="img-fluid" alt=""><p class="bg-danger text-white text-center pt-2 pb-2">Block by Block</p></div>
+            <div class="col-md-3"><img src="assets/block.JPG" class="img-fluid shadow-lg" alt=""><p class="bg-danger text-white text-center pt-2 pb-2">Block by Block</p></div>
 
             <div class="col-md-3"><img src="assets/gravity.JPG" class="img-fluid" alt=""><p class="bg-info text-white text-center pt-2 pb-2">Gravity Maze</p></div>
             <div class="col-md-3"><img src="assets/troy.JPG" class="img-fluid" alt=""><p class="bg-warning text-white text-center pt-2 pb-2">Troy</p></div>
             <div class="col-md-3"><img src="assets/utopia.JPG" class="img-fluid" alt=""><p class="bg-primary text-white text-center pt-2 pb-2">Utopia</p></div>
         </div>
       </div>
-  </div>
+  <!-- </div> -->
 <hr class="my-5">
 
     <div id="myMod" class="modal fade">
@@ -275,7 +288,6 @@
         $('[data-toggle="popover"]').popover()
       })
 
-      $('.collapse').collapse()
     </script>
     </body>
   </html>
