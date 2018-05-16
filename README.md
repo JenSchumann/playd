@@ -24,14 +24,16 @@ https://playdd.herokuapp.com/
 Task List:
 - [ ] add links to the Github repo & Heroku site for projects on the "In Progress" page
 - [ ] typography updates
-- [ ] footer links
 - [ ] Kingly content in all modals
 - [ ] update readme
 - [x] add list-group-item-action class to accordion buttons on about page
 - [ ] photoshop edit pics below "our story" on about page to be the same size
 - [x] set footer to collapsed state when page loads
 - [ ] add a badge pill to the congrats message for HiLo winners
+- [ ] pinterest link to my game board
+- [ ] link to my youtube account on the footer  
 - [ ] incorporate BGG API for content in about page: https://boardgamegeek.com/wiki/page/BGG_XML_API
+- [ ] optimize code to make it DRY
 
 BGG API Notes:
  BGG API Info: https://boardgamegeek.com/wiki/page/BGG_XML_API
