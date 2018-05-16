@@ -27,9 +27,9 @@ Task List:
 - [ ] footer links
 - [ ] Kingly content in all modals
 - [ ] update readme
-- [ ] add list-group-item-action class to accordion buttons on about page
+- [x] add list-group-item-action class to accordion buttons on about page
 - [ ] photoshop edit pics below "our story" on about page to be the same size
-- [ ] set footer to collapsed state when page loads
+- [x] set footer to collapsed state when page loads
 - [ ] add a badge pill to the congrats message for HiLo winners
 - [ ] incorporate BGG API for content in about page: https://boardgamegeek.com/wiki/page/BGG_XML_API
 
@@ -44,6 +44,6 @@ BGG API Notes:
 
 could tie my BGG user info on about page:
 http://www.boardgamegeek.com/xmlapi/collection/JenSchumann
-
+41114
 http://www.boardgamegeek.com/xmlapi/boardgame/165056
 224037
