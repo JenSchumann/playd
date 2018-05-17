@@ -107,19 +107,44 @@
     <div id="myMod" class="modal fade">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                  <div class="modal-header"><h3 class="modal-title">Title</h3>
+                  <div class="modal-header"><h3 class="modal-title">The Value of Play</h3>
                   <button type="button" class="close" data-dismiss="modal">
                   <span>x</span></button>
                   </div>
                   <div class="modal-body">
-                    Hello World
+                    I've got tons of research on the value of play in a variety of environments, and wrote extensively on the topic during my master's studies.  If you're interested in obtaining more research on the value of play, I'm happy to share more of what I have!
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Send Message</button>
+                    <button type="button" class="btn btn-primary" data-toggle="collapse" href="#researchmsg">Request More Info</button><br>
                   </div>
-            </div>
-          </div>
-    </div>
+
+                        <div class="container collapse" id="researchmsg">
+                          <form class="" action="https://formspree.io/d3vignition@gmail.com" method="POST">
+                            <div class="form-group">
+                              <label for="name">Your Name:</label>
+                              <input type="text" class="form-control" id="name" name="name">
+
+                            </div>
+
+                            <div class="form-group">
+                              <label for="email">Your Email:</label>
+                              <input type="email" class="form-control" id="email" name="_replyto">
+
+                            </div>
+
+                            <div class="form-group">
+                              <label for="message">Message:</label>
+                              <textarea rows="7" class="form-control" id="message" name="message"></textarea>
+                            </div>
+
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div> <!-- modal-footer   -->
+                        </form>
+                        </div> <!-- container collapse hilomsg -->
+                  </div> <!-- modal-content   -->
+                  </div> <!-- modal-dialog modal-dialog-centered   -->
+            </div> <!-- myMod -->
 
     <!-- Research content -->
 <div class="container collapse" id="research">
