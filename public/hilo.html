@@ -20,7 +20,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="main.css">
 
-    <title>Hi OR Low?</title>
+    <title>Playd</title>
     <style media="screen">
       body{background-color: #EDE8CE;}
 
@@ -171,12 +171,42 @@
                   <div class="modal-body">
                     A simple frontend game of guessing whether the next card dealt is higher or lower than the current card in play
                   </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Send Message</button>
+                  <div class="modal-footer" id="hilobtn">
+                    <button type="button" class="btn btn-primary" data-toggle="collapse" href="#hilomsg">Share Feedback</button><br>
                   </div>
+
+                        <div class="container collapse" id="hilomsg">
+                          <form class="" action="https://formspree.io/d3vignition@gmail.com" method="POST">
+                            <div class="form-group">
+                              <label for="name">Your Name:</label>
+                              <input type="text" class="form-control" id="name" name="name">
+
+                            </div>
+
+                            <div class="form-group">
+                              <label for="email">Your Email:</label>
+                              <input type="email" class="form-control" id="email" name="_replyto">
+
+                            </div>
+
+                            <div class="form-group">
+                              <label for="message">Message:</label>
+                              <textarea rows="7" class="form-control" id="message" name="message"></textarea>
+                            </div>
+
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-primary">Send Message</button>
+                          <!-- data-dismiss="modal" -->
+                        </div>
+                        </form>
+                        </div>
+                  </div>
+                  </div>
+
             </div>
-          </div>
-    </div>
+          <!-- </div> -->
+    <!-- </div> -->
+
 
     <!-- Footer -->
     <footer class="navbar container-fluid text-light mt-3 fixed-bottom sticky-bottom" style="background-color:#052F5F">
@@ -225,6 +255,13 @@
         $('[data-toggle="tooltip"]').tooltip()
         $('[data-toggle="popover"]').popover()
       })
+
+      const hideBtn = () => {
+        const byeBtn = $('#hilomsg').on('click', (e) => {
+          console.log('Share Message button clicked');
+          $(e.currentTarget).css('display', 'none');
+        })
+      }
       //==========================================================================
       // variables:
       let cardOutput = document.getElementById('cards');
