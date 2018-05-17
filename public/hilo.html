@@ -171,7 +171,7 @@
                   <div class="modal-body">
                     A simple frontend game of guessing whether the next card dealt is higher or lower than the current card in play
                   </div>
-                  <div class="modal-footer" id="hilobtn">
+                  <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-toggle="collapse" href="#hilomsg">Share Feedback</button><br>
                   </div>
 
@@ -196,17 +196,12 @@
 
                         <div class="modal-footer">
                           <button type="submit" class="btn btn-primary">Send Message</button>
-                          <!-- data-dismiss="modal" -->
-                        </div>
+                        </div> <!-- modal-footer   -->
                         </form>
-                        </div>
-                  </div>
-                  </div>
-
-            </div>
-          <!-- </div> -->
-    <!-- </div> -->
-
+                        </div> <!-- container collapse hilomsg -->
+                  </div> <!-- modal-content   -->
+                  </div> <!-- modal-dialog modal-dialog-centered   -->
+            </div> <!-- myMod -->
 
     <!-- Footer -->
     <footer class="navbar container-fluid text-light mt-3 fixed-bottom sticky-bottom" style="background-color:#052F5F">
@@ -256,12 +251,6 @@
         $('[data-toggle="popover"]').popover()
       })
 
-      const hideBtn = () => {
-        const byeBtn = $('#hilomsg').on('click', (e) => {
-          console.log('Share Message button clicked');
-          $(e.currentTarget).css('display', 'none');
-        })
-      }
       //==========================================================================
       // variables:
       let cardOutput = document.getElementById('cards');
