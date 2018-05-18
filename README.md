@@ -34,6 +34,7 @@ Task List:
 - [ ] link to my youtube account on the footer  
 - [ ] incorporate BGG API for content in about page: https://boardgamegeek.com/wiki/page/BGG_XML_API
 - [ ] optimize code to make it DRY
+- [ ] update HiLo game logic to include option for same card guess (or whether if the same card comes up it would not count as a lost life)
 
 BGG API Notes:
  BGG API Info: https://boardgamegeek.com/wiki/page/BGG_XML_API

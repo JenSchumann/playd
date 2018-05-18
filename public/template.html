@@ -103,24 +103,41 @@
             <button type="button" class="btn btn-warning text-primary">Learn More</button>
       </div>
   </div>
-<hr class="my-5">
 
-    <div id="myMod" class="modal fade">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                  <div class="modal-header"><h3 class="modal-title">Title</h3>
-                  <button type="button" class="close" data-dismiss="modal">
-                  <span>x</span></button>
-                  </div>
-                  <div class="modal-body">
-                    Hello World
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Send Message</button>
-                  </div>
-            </div>
+  <!-- hilo -->
+  <hr class="my-5">
+  <div class="container collapse pb-5" id="hilo">
+
+    <div class="row">
+        <div class="col-lg-5 jumbotron bg-danger" id="hiloInfo">
+
+              <h1 class="h1" data-toggle="tooltip" data-placement="bottom" title="Are you feeling lucky?? If you are, even though this game is not yet responsive for smaller screens, you can use some of that lucky energy by playing a game, & seeing how many times it takes you to win!"><span class="badge badge-warning text-primary">High vs Low</span></h1><br>
+              <div id="messageHL" class="text-center text-light display-5"><span class="badge badge-pill" style="background-color:#052F5F"><strong>Rules:</strong></span> Select either Hi or Low for the next card.  Guess the value of the down facing card versus the up facing card.  You start with 3 lives.  Guess incorrectly 3 times and it's game over.  Score 5 points & you win!  How high can you go?</div>
+              <br>
+
+              <div id="start">
+                <button id="btnstart" type="button" class="btn btn-warning text-primary mx-auto mb-2">Start Game</button>
+              </div>
+
+              <div id="playAgain">
+                <button id="btnPlayAgain" type="button" class="btn btn-warning text-primary mx-auto mb-2">Play Again</button>
+              </div>
+        </div>
+
+      <div id="score"></div>
+
+      <div class="col-lg-7">
+          <div id="highLow" class="pt-3 pb-3 mx-auto btn-block">
+            <button id="btnhigh" type="button"  class="btn btn-outline-danger btn-lg btn-block">High</button><br>
+            <button id="btnlow" type="button"  class="btn btn-outline-danger btn-lg btn-block">Low</button>
           </div>
-    </div>
+
+          <div id="cards" class="pb-3 mx-auto text-center"></div>
+      </div>
+      </div>
+
+      </div>
+
 
     <!-- Footer -->
     <footer class="navbar container-fluid text-light mt-3 fixed-bottom sticky-bottom" style="background-color:#052F5F">
@@ -163,10 +180,12 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
       <script>
-      $(function() {
-        $('[data-toggle="tooltip"]').tooltip()
-        $('[data-toggle="popover"]').popover()
-      })
+
+     $(function() {
+       $('[data-toggle="tooltip"]').tooltip()
+       $('[data-toggle="popover"]').popover()
+
+     })
 
     </script>
     </body>
