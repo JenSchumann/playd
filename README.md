@@ -7,8 +7,7 @@ https://playdd.herokuapp.com/
 Playd is a type of portfolio site to display Bootstrap 4 skills, share some insight about who I am & what makes me tick, & share some simple frontend javscript games as I continue to build my skills.
 
 #### **Technology Used:**
- - HTML5, CSS, JavaScript, JQuery, Express, NodeJS,    
- Bootstrap 4, Trello
+ - HTML5, CSS, JavaScript, JQuery, Express, NodeJS, Bootstrap 4, Trello
 
 #### **Web Site Design:**
 The design of this site is inspired by learning acquired in a Udemy Class taught by Laurence Svekis which I took because I wanted to gain a deeper understanding of how to work with the Bootstrap 4 framework.
@@ -19,6 +18,8 @@ The design of this site is inspired by learning acquired in a Udemy Class taught
  - Color palette: https://coolors.co/export/pdf/052f5f-005377-06a77d-d5c67a-f1a208
  - personal photo archive from teaching experience
  - personal research archive from grad studies
+ - Email router: https://formspree.io/
+ - Email receiver: https://www.mailinator.com/faq.jsp
 
 #### **Task List:**
 - [ ] add links to the Github repo & Heroku site for projects on the "In Progress" page
