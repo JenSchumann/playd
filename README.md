@@ -25,7 +25,7 @@ The design of this site is inspired by learning acquired in a Udemy Class taught
 - [ ] add links to the Github repo & Heroku site for projects on the "In Progress" page
 - [x] typography updates
 - [x] Kingly content in all modals
-- [ ] update readme
+- [x] update readme
 - [x] add list-group-item-action class to accordion buttons on about page
 - [ ] photoshop edit pics below "our story" on about page to be the same size
 - [x] set footer to collapsed state when page loads
@@ -36,7 +36,7 @@ The design of this site is inspired by learning acquired in a Udemy Class taught
 - [ ] optimize code to make it DRY
 - [ ] update HiLo game logic to include option for same card guess (or whether if the same card comes up it would not count as a lost life)
 - [ ] update privacy, terms of service, and legal links in footer to include active links w/authentic content
-
+- [ ] add caption to large photo on about page
 
 #### **BGG API Notes:**
  BGG API Info: https://boardgamegeek.com/wiki/page/BGG_XML_API
